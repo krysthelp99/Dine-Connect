@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { 
   MapPin, 
-  Clock, 
   Flame, 
   Leaf, 
   Instagram, 
   Facebook, 
   Menu,
-  ChevronRight
+  ChevronRight,
+  Star
 } from "lucide-react";
 import heroBg from "@assets/generated_images/minimalist_bali_cafe_background.png";
 import { Button } from "@/components/ui/button";
@@ -23,6 +23,27 @@ const slideUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 };
 
+const popularMenu = [
+  {
+    name: "Signature Ayam Gepuk",
+    description: "Crispy fried chicken smashed with our authentic hand-ground sambal cobek.",
+    price: "RM 15.90",
+    category: "The Heat"
+  },
+  {
+    name: "Pistachio Butter Toast",
+    description: "Thick-cut artisanal toast slathered in premium pistachio cream and crushed nuts.",
+    price: "RM 12.90",
+    category: "The Sweet"
+  },
+  {
+    name: "Indo-Fusion Fried Rice",
+    description: "A unique blend of traditional spices with a modern twist, served with sunny side up.",
+    price: "RM 14.90",
+    category: "The Heat"
+  }
+];
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -35,13 +56,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background selection:bg-accent/30">
       {/* Navbar */}
-      <nav className="fixed w-full z-50 px-6 py-8 flex justify-between items-center transition-all">
+      <nav className="fixed w-full z-50 px-6 py-8 flex justify-between items-center transition-all bg-background/50 backdrop-blur-sm">
         <div className="text-xl font-heading font-medium tracking-widest uppercase">
           Mami Kopitiam
         </div>
         
         <div className="hidden md:flex items-center gap-12 text-[10px] uppercase tracking-[0.2em] font-medium">
-          <button onClick={() => scrollToSection('about')} className="hover:opacity-50 transition-opacity">Philosophy</button>
+          <button onClick={() => scrollToSection('about')} className="hover:opacity-50 transition-opacity">About</button>
           <button onClick={() => scrollToSection('menu')} className="hover:opacity-50 transition-opacity">Menu</button>
           <button onClick={() => scrollToSection('location')} className="hover:opacity-50 transition-opacity">Contact</button>
           <button className="bg-foreground text-background px-6 py-2 hover:bg-foreground/90 transition-all">Visit</button>
@@ -72,16 +93,14 @@ export default function Home() {
           variants={slideUp}
         >
           <span className="text-[10px] uppercase tracking-[0.4em] mb-6 block text-primary font-bold">Miri — Sarawak</span>
-          <h1 className="text-5xl md:text-8xl font-heading mb-8 leading-[1.1]">
-            Indo-Fusion <br />
-            <span className="italic font-serif">reimagined.</span>
+          <h1 className="text-5xl md:text-8xl font-heading mb-4 leading-[1.1]">
+            Mami Kopitiam
           </h1>
-          <p className="text-lg md:text-xl font-light text-foreground/70 max-w-xl mb-12 leading-relaxed">
-            Spicy Ayam Gepuk meets the viral Pistachio Toast. A sanctuary of heat and sweetness in the heart of Marina Parkcity.
+          <p className="text-xl md:text-2xl font-light text-foreground/70 mb-12 tracking-[0.2em] uppercase">
+            Indo-Fusion <span className="italic font-serif normal-case tracking-normal text-primary">reimagined.</span>
           </p>
           <div className="flex items-center gap-8">
             <button 
-              id="menu"
               onClick={() => scrollToSection('menu')}
               className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold"
             >
@@ -92,7 +111,46 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Philosophy / Features */}
+      {/* Popular Menu Section */}
+      <section id="menu" className="py-32 px-6 md:px-24 bg-white/30">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="text-center mb-20">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-4 block">Selection</span>
+            <h2 className="text-4xl font-heading">Popular Menu</h2>
+            <p className="mt-4 font-light text-foreground/60">A curated list of our most loved signatures.</p>
+          </div>
+
+          <div className="space-y-16">
+            {popularMenu.map((item, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-8 border-b border-border/50"
+              >
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-[9px] uppercase tracking-widest px-2 py-1 bg-secondary/50 text-secondary-foreground font-bold">{item.category}</span>
+                    <h3 className="text-xl font-heading uppercase tracking-wider">{item.name}</h3>
+                  </div>
+                  <p className="font-light text-foreground/60 text-sm max-w-lg">{item.description}</p>
+                </div>
+                <div className="text-lg font-heading text-primary">{item.price}</div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* About Section */}
       <section id="about" className="py-32 px-6 md:px-24 border-t border-border">
         <div className="grid md:grid-cols-2 gap-24 items-center">
           <motion.div 
@@ -135,17 +193,41 @@ export default function Home() {
       {/* Location */}
       <section id="location" className="py-32 bg-secondary/20">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <MapPin className="w-6 h-6 mb-8 text-primary/40" />
-            <h2 className="text-4xl font-heading mb-8">Sanctuary at Marina.</h2>
-            <p className="font-light text-lg mb-12">
-              Marina Parkcity Phase 2, Miri.<br />
-              Open Daily from 7:00 AM — 10:00 PM.
-            </p>
-            <div className="flex gap-4">
-               <Button variant="outline" className="rounded-none border-foreground hover:bg-foreground hover:text-background px-12 uppercase text-[10px] tracking-widest">
-                 Map
-               </Button>
+          <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div className="flex flex-col items-start text-left">
+              <MapPin className="w-6 h-6 mb-8 text-primary/40" />
+              <h2 className="text-4xl font-heading mb-8 uppercase tracking-widest">Sanctuary at Marina.</h2>
+              <div className="space-y-6 mb-12">
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mb-2">Location</h4>
+                  <p className="font-light text-lg">
+                    Marina Parkcity Phase 2, Miri,<br />
+                    Sarawak, Malaysia.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mb-2">Hours</h4>
+                  <p className="font-light text-lg">
+                    Open Daily<br />
+                    7:00 AM — 10:00 PM
+                  </p>
+                </div>
+              </div>
+              <Button variant="outline" className="rounded-none border-foreground hover:bg-foreground hover:text-background px-12 uppercase text-[10px] tracking-widest">
+                Get Directions
+              </Button>
+            </div>
+            
+            <div className="h-[500px] w-full bg-white p-4 rounded-sm shadow-xl grayscale contrast-125">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15931.334188168666!2d113.9666!3d4.3833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMjMnMDAuMCJOIDExM8KwNTgnMDAuMCJF!5e0!3m2!1sen!2smy!4v1625647000000!5m2!1sen!2smy" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, filter: 'grayscale(1) contrast(1.2)' }} 
+                allowFullScreen 
+                loading="lazy" 
+                title="Google Map"
+              />
             </div>
           </div>
         </div>
