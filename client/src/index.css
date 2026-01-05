@@ -9,60 +9,36 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Modern Kopitiam Palette */
-  /* Cream Background */
-  --color-background: hsl(40 33% 98%);
-  /* Dark Slate Text */
-  --color-foreground: hsl(210 29% 24%);
+  /* Bali Minimalist Palette */
+  --color-background: hsl(35 40% 98%); /* Soft warm white */
+  --color-foreground: hsl(25 20% 15%); /* Earthy dark charcoal */
   
-  /* Card - slightly warmer white */
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(210 29% 24%);
+  --color-card-foreground: hsl(25 20% 15%);
   
-  --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(210 29% 24%);
+  --color-primary: hsl(25 30% 30%); /* Earthy Teak Brown */
+  --color-primary-foreground: hsl(35 40% 98%);
   
-  /* Deep Chili Red - Primary Action */
-  --color-primary: hsl(6 63% 46%);
-  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(45 20% 85%); /* Warm Sand */
+  --color-secondary-foreground: hsl(25 20% 25%);
   
-  /* Golden Brown - Secondary/Toast */
-  --color-secondary: hsl(29 52% 64%);
-  --color-secondary-foreground: hsl(210 29% 24%);
+  --color-accent: hsl(140 10% 40%); /* Tropical Sage Green */
+  --color-accent-foreground: hsl(35 40% 98%);
   
-  --color-muted: hsl(30 20% 90%);
-  --color-muted-foreground: hsl(210 20% 40%);
+  --color-muted: hsl(35 20% 92%);
+  --color-muted-foreground: hsl(25 10% 45%);
   
-  --color-accent: hsl(29 52% 64%); /* Using Golden Brown as accent */
-  --color-accent-foreground: hsl(210 29% 24%);
-  
-  --color-destructive: hsl(0 84.2% 60.2%);
-  --color-destructive-foreground: hsl(0 0% 98%);
-  
-  --color-border: hsl(210 20% 85%);
-  --color-input: hsl(210 20% 85%);
-  --color-ring: hsl(6 63% 46%); /* Primary red ring */
-  
-  --color-chart-1: hsl(6 63% 46%);
-  --color-chart-2: hsl(29 52% 64%);
-  --color-chart-3: hsl(210 29% 24%);
-  --color-chart-4: hsl(43 74% 66%);
-  --color-chart-5: hsl(27 87% 67%);
+  --color-border: hsl(25 10% 90%);
+  --color-ring: hsl(25 30% 30%);
   
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   
-  --radius: 0.5rem;
+  --radius: 0.25rem; /* More minimalist sharp edges */
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
-  }
+  * { @apply border-border; }
+  body { @apply font-sans antialiased bg-background text-foreground; }
+  h1, h2, h3 { @apply font-heading tracking-tight font-light; }
 }
