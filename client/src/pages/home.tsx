@@ -6,8 +6,7 @@ import {
   Instagram, 
   Facebook, 
   Menu,
-  ChevronRight,
-  Star
+  ChevronRight
 } from "lucide-react";
 import heroBg from "@assets/generated_images/minimalist_bali_cafe_background.png";
 import { Button } from "@/components/ui/button";
@@ -111,6 +110,40 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* About / Introduction Section */}
+      <section id="about" className="py-32 px-6 md:px-24 bg-secondary/5">
+        <div className="max-w-5xl mx-auto">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="grid md:grid-cols-2 gap-16 items-center"
+          >
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-6 block">Our Story</span>
+              <h2 className="text-4xl md:text-5xl font-heading mb-8 leading-tight">A Modern Sanctuary <br/>for Traditional Flavors.</h2>
+              <p className="font-light text-lg text-foreground/70 leading-relaxed mb-6">
+                Born in the heart of Miri, Mami Kopitiam is where the soul of Indonesian street food meets the refined simplicity of a modern sanctuary. We believe that heat and sweetness aren't just flavors—they're experiences.
+              </p>
+              <p className="font-light text-foreground/60 leading-relaxed">
+                From our hand-ground sambals to our viral artisanal toasts, every dish is crafted with a respect for heritage and a passion for contemporary vibes. We invite you to lepak, enjoy the spice, and find your calm in our tropical-inspired industrial space.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="aspect-[4/5] bg-secondary/20 rounded-sm overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80" 
+                  className="w-full h-full object-cover grayscale-[30%] contrast-110" 
+                  alt="Cafe atmosphere" 
+                />
+              </div>
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/10 -z-10 rounded-sm" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Popular Menu Section */}
       <section id="menu" className="py-32 px-6 md:px-24 bg-white/30">
         <motion.div 
@@ -150,8 +183,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-32 px-6 md:px-24 border-t border-border">
+      {/* Characteristics Section */}
+      <section className="py-32 px-6 md:px-24 border-t border-border">
         <div className="grid md:grid-cols-2 gap-24 items-center">
           <motion.div 
             initial="hidden"
