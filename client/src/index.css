@@ -9,36 +9,36 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   
-  /* Bali Minimalist Palette */
+  /* Bali Pop Minimalist Palette */
   --color-background: hsl(35 40% 98%); /* Soft warm white */
   --color-foreground: hsl(25 20% 15%); /* Earthy dark charcoal */
   
   --color-card: hsl(0 0% 100%);
   --color-card-foreground: hsl(25 20% 15%);
   
-  --color-primary: hsl(25 30% 30%); /* Earthy Teak Brown */
-  --color-primary-foreground: hsl(35 40% 98%);
+  --color-primary: hsl(6 70% 50%); /* Vibrant Chili Red (Pop) */
+  --color-primary-foreground: hsl(0 0% 100%);
   
-  --color-secondary: hsl(45 20% 85%); /* Warm Sand */
-  --color-secondary-foreground: hsl(25 20% 25%);
+  --color-secondary: hsl(43 90% 65%); /* Bright Golden Honey (Pop) */
+  --color-secondary-foreground: hsl(25 20% 15%);
   
-  --color-accent: hsl(140 10% 40%); /* Tropical Sage Green */
-  --color-accent-foreground: hsl(35 40% 98%);
+  --color-accent: hsl(150 60% 35%); /* Deep Tropical Jungle Green */
+  --color-accent-foreground: hsl(0 0% 100%);
   
   --color-muted: hsl(35 20% 92%);
   --color-muted-foreground: hsl(25 10% 45%);
   
   --color-border: hsl(25 10% 90%);
-  --color-ring: hsl(25 30% 30%);
+  --color-ring: hsl(6 70% 50%);
   
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
   
-  --radius: 0.25rem; /* More minimalist sharp edges */
+  --radius: 0rem; /* Sharp, high-fashion edges */
 }
 
 @layer base {
   * { @apply border-border; }
   body { @apply font-sans antialiased bg-background text-foreground; }
-  h1, h2, h3 { @apply font-heading tracking-tight font-light; }
+  h1, h2, h3 { @apply font-heading tracking-tight font-medium; }
 }
