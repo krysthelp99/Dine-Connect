@@ -1,0 +1,44 @@
+Create a modern, responsive landing page for a restaurant called "Mami Kopitiam" located in Miri, Sarawak. Use React, Tailwind CSS, and Lucide React for icons.
+
+**Design Aesthetic:**
+- The vibe should be "Modern Kopitiam" — a blend of nostalgic coffee shop warmth with a trendy, youthful industrial feel.
+- Color Palette: Use warm tones to represent spice and toast. Deep Chili Red (#C0392B), Golden Brown (for toast/coffee), Cream (background), and Dark Slate (text).
+- Typography: Clean sans-serif fonts for a modern look.
+
+**Page Structure & Content:**
+
+1. **Navbar:**
+   - Logo text: "Mami Kopitiam"
+   - Links: Menu, Location, About, Contact.
+   - A "Visit Us" button.
+
+2. **Hero Section:**
+   - Headline: "The Best of Indo-Fusion & Modern Toast in Miri."
+   - Subheadline: "From spicy Ayam Gepuk to viral Pistachio Toast. Come for the heat, stay for the vibe at Marina Parkcity."
+   - CTA Button: "View Menu".
+   - Background: Use a placeholder image of a bustling, warm cafe or spicy food.
+
+3. **Feature Section: "Spicy Meets Sweet"**
+   - Create a 2-column grid showcasing the two sides of the menu.
+   - Card 1 (The Heat): Highlight "Signature Sambal Cobek" and "Ayam Gepuk." Mention the authentic Indonesian spice.
+   - Card 2 (The Sweet): Highlight "Fancy Toasts." Specifically mention "Pistachio Butter Toast" and "Nutella Series."
+
+4. **Why We Are Different:**
+   - A section with icons (Lucide React) highlighting:
+     - "Modern Lepak Spot" (Comfortable environment).
+     - "Authentic Sambal" (Homemade spicy paste).
+     - "Marina Parkcity" (Prime location in Phase 2).
+
+5. **Location & Hours:**
+   - Display the address: "Marina Parkcity Phase 2, Miri, Sarawak."
+   - Hours: "Open Daily: 7:00 AM - 10:00 PM" (Use placeholder hours).
+   - A placeholder area for a Google Map embed.
+
+6. **Footer:**
+   - Social media links (Facebook, Instagram, TikTok).
+   - Copyright Mami Kopitiam.
+
+**Technical Requirements:**
+- Ensure mobile responsiveness.
+- Use distinct, high-contrast buttons.
+- Use 'framer-motion' for subtle fade-in animations on scroll.
