@@ -199,7 +199,7 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-6xl font-heading font-bold mb-16 tracking-tighter">SPICY <br/><span className="text-primary">MEETS</span> <br/>SWEET.</h2>
+            <h2 className="text-6xl font-heading font-bold mb-16 tracking-tighter uppercase leading-none">SPICY<br/><span className="text-primary">MEETS</span><br/>SWEET.</h2>
             <div className="space-y-16">
               <div className="relative pl-12">
                 <div className="absolute left-0 top-2 w-2 h-2 bg-primary" />
